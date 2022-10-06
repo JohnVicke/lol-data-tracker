@@ -4,7 +4,7 @@ import { Button } from "ui";
 import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
-  const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
+  const _hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
 
   return (
     <>
