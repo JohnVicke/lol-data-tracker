@@ -2,7 +2,15 @@
  * @type {import('eslint').Linter.Config}
  */
 module.exports = {
-  extends: ["next", "turbo", "prettier"],
+  extends: [
+    "next",
+    "turbo",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+  ],
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
   settings: {
     next: {
       rootDir: ["apps/*/", "packages/*/"],
@@ -27,11 +35,6 @@ module.exports = {
       },
     },
   ],
-  parserOptions: {
-    babelOptions: {
-      presets: [require.resolve("next/babel")],
-    },
-  },
   ignorePatterns: [
     "**/*.js",
     "**/*.json",
