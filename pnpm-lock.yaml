@@ -61,6 +61,7 @@ importers:
 
   apps/teemo:
     specifiers:
+      '@playwright/test': ^1.26.1
       '@trpc/client': ^9.27.4
       '@trpc/next': ^9.27.4
       '@trpc/react': ^9.27.4
@@ -99,6 +100,7 @@ importers:
       ui: link:../../packages/ui
       zod: 3.19.1
     devDependencies:
+      '@playwright/test': 1.26.1
       '@types/node': 18.0.0
       '@types/react': 18.0.14
       '@types/react-dom': 18.0.5
@@ -2092,6 +2094,15 @@ packages:
     dependencies:
       mkdirp: 1.0.4
       rimraf: 3.0.2
+    dev: true
+
+  /@playwright/test/1.26.1:
+    resolution: {integrity: sha512-bNxyZASVt2adSZ9gbD7NCydzcb5JaI0OR9hc7s+nmPeH604gwp0zp17NNpwXY4c8nvuBGQQ9oGDx72LE+cUWvw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.8.2
+      playwright-core: 1.26.1
     dev: true
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.7_metx475lqcp4j5c75za4zf7xbi:
@@ -9782,6 +9793,12 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       find-up: 5.0.0
+    dev: true
+
+  /playwright-core/1.26.1:
+    resolution: {integrity: sha512-hzFchhhxnEiPc4qVPs9q2ZR+5eKNifY2hQDHtg1HnTTUuphYCBP8ZRb2si+B1TR7BHirgXaPi48LIye5SgrLAA==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /pnp-webpack-plugin/1.6.4_typescript@4.8.4:

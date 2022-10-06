@@ -6,7 +6,8 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "clean": "rm -rf node_modules .turbo .next"
+    "clean": "rm -rf node_modules .turbo .next",
+    "test:e2e": "pnpm dlx playwright test"
   },
   "dependencies": {
     "@trpc/client": "^9.27.4",
@@ -23,6 +24,7 @@
     "zod": "^3.18.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.26.1",
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
