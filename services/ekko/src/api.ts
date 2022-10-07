@@ -6,9 +6,5 @@ export const createApp = (): Express => {
 
   app.get("/healthcheck", healthcheck);
 
-  app.get("/", (_req: Request, res: Response) => {
-    res.send("Express + TypeScript Server");
-  });
-
   return app;
 };
