@@ -8,5 +8,6 @@ export const createApp = (): Express => {
   app.get("/healthcheck", healthcheck);
 
   app.use("/api", apiRouter);
+
   return app;
 };
