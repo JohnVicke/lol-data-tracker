@@ -1,7 +1,71 @@
 import * as React from "react";
+import { clsx } from "clsx";
 
-export const Button = ({ children }: React.PropsWithChildren) => (
-  <button className="w-60 px-3 py-2 rounded drop-shadow-2xl text-white font-bold bg-gradient-to-r from-indigo-400 to-fuchsia-600 hover:bg-gradient-to-r hover:from-indigo-500 hover:to-fuchsia-700 focus:ring-indigo-400 focus:ring-4 focus:ring-offset-2 transition-all duration-200">
-    Let&apos;s get it ! {children}
+type ButtonColors =
+  | "primary"
+  | "secondary"
+  | "accent"
+  | "info"
+  | "success"
+  | "warning"
+  | "error";
+
+type ButtonVariants = "ghost" | "link" | "outline" | "block" | "wide";
+
+type ButtonSizes = "lg" | "md" | "sm" | "xs";
+
+export type ButtonProps = Omit<
+  React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >,
+  "color"
+> & {
+  variant?: ButtonVariants;
+  size?: ButtonSizes;
+  disableAnimation?: boolean;
+  active?: boolean;
+  disabled?: boolean;
+  loading?: boolean;
+  wide?: boolean;
+  color?: ButtonColors;
+  endIcon?: React.ReactNode;
+  startIcon?: React.ReactNode;
+};
+
+export const Button = ({
+  color,
+  type,
+  variant,
+  size,
+  children,
+  loading,
+  wide,
+  disabled,
+  active,
+  className,
+  endIcon,
+  startIcon,
+  ...props
+}: ButtonProps) => (
+  <button
+    className={clsx(
+      "btn",
+      { [`btn-${size}`]: !!size },
+      { [`btn-${type}`]: !!type },
+      { [`btn-${variant}`]: !!variant },
+      { [`btn-${color}`]: !!color },
+      { [`btn-${wide}`]: !!wide },
+      { [`btn-${disabled}`]: !!disabled },
+      { [`btn-${active}`]: !!active },
+      { loading: !!loading },
+      { "gap-2": !!endIcon || !!startIcon },
+      className
+    )}
+    {...props}
+  >
+    {startIcon}
+    {children}
+    {endIcon}
   </button>
 );
