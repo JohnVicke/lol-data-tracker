@@ -1,4 +1,4 @@
-import { createApp } from "./api";
+import { createApp } from "./app";
 import { env } from "./env/server";
 import { gracefulShutdown } from "./gracefulShutdown";
 
