@@ -19,6 +19,6 @@ jobs:
         run: echo Hello, world!
 
   test:
-    uses: johnvicke/lol-data-tracker/.github/workflows/hello-world.yml
+    uses: johnvicke/lol-data-tracker/.github/workflows/hello-world.yml@main
     with:
       foo: "lol"
