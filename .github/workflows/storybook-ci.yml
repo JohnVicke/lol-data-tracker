@@ -53,9 +53,10 @@ jobs:
   #
   #      - name: Build and lint
   #        run: pnpm turbo build lint
+
   deploy-preview:
     runs-on: ubuntu-latest
-    uses: johnvicke/lol-data-tracker/.github/workflows/vercel-deploy-preview.yml@main
+    uses: ./.github/workflows/vercel-deploy-preview.yml
     with:
       secrets:
         PROJECT_ID: ${{ secrets.STORYBOOK_PROJECT_ID }}
