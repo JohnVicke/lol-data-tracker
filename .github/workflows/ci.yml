@@ -6,6 +6,7 @@ on:
     paths:
       - "apps/teemo/*"
   pull_request:
+    branches: ["*"]
     types: [opened, synchronize]
     paths:
       - "apps/teemo/*"
