@@ -4,12 +4,12 @@ on:
   push:
     branches: ["main"]
     paths:
-      - "apps/storybook/*"
+      - "apps/storybook/**"
   pull_request:
     branches: ["*"]
     types: [opened, synchronize]
     paths:
-      - "apps/storybook/*"
+      - "apps/storybook/**"
 
 jobs:
   build-lint:
