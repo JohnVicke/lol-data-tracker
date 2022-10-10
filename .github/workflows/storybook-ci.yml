@@ -55,10 +55,8 @@ jobs:
   #        run: pnpm turbo build lint
 
   deploy-preview:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/vercel-deploy-preview.yml
-    with:
-      secrets:
-        PROJECT_ID: ${{ secrets.STORYBOOK_PROJECT_ID }}
-        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    secrets:
+      PROJECT_ID: ${{ secrets.STORYBOOK_PROJECT_ID }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

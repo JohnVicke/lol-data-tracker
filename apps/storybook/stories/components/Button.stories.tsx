@@ -5,7 +5,7 @@ import { createStory } from "../../utils/createStory";
 import { Button } from "ui";
 import type { ButtonProps } from "ui";
 
-console.log("lsdasdfjasdffol");
+console.log("lsdasdfjasdsadhjfhasdfffol");
 
 export const Base: ComponentStory<typeof Button> = (args: ButtonProps) => <Button {...args}>button</Button>;
 
