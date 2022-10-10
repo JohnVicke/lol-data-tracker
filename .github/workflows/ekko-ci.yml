@@ -12,6 +12,6 @@ on:
 
 jobs:
   test:
-    uses: ./.github/workflows/hello-world.yml
+    uses: johnvicke/lol-data-tracker/.github/workflows/hello-world.yml
     with:
       foo: "lol"
