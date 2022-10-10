@@ -5,12 +5,10 @@ on:
     branches:
       - "main"
     paths:
-      - "apps/storybook/**"
+      - "apps/storybook/*"
   pull_request:
     branches:
       - "*"
-    paths:
-      - "apps/storybook/**"
 
 jobs:
   #
