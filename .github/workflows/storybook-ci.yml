@@ -7,8 +7,6 @@ on:
       - "apps/storybook/**"
   pull_request:
     branches: ["*"]
-    paths:
-      - "apps/storybook/**"
 
 jobs:
   build-lint:
