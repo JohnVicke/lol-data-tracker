@@ -56,7 +56,7 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     needs: [build-lint]
-    uses: ./.github/workflows/vercel-deploy-preview.yml
+    uses: workflows/vercel-deploy-preview.yml
     with:
       secrets:
         PROJECT_ID: ${{ secrets.STORYBOOK_PROJECT_ID }}
