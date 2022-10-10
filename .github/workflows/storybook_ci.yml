@@ -2,11 +2,13 @@ name: Storybook CI
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - "main"
     paths:
       - "apps/storybook/*"
   pull_request:
-    branches: ["*"]
+    branches:
+      - "*"
     paths:
       - "apps/storybook/*"
 
@@ -53,7 +55,7 @@ jobs:
   #        run: pnpm turbo build lint
 
   deploy-preview:
-    uses: johnvicke/lol-data-tracker/.github/workflows/vercel-deploy-preview.yml@main
+    uses: johnvicke/lol-data-tracker/.github/workflows/vercel-deploy_preview.yml@main
     secrets:
       PROJECT_ID: ${{ secrets.STORYBOOK_PROJECT_ID }}
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}

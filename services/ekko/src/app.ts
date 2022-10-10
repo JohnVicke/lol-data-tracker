@@ -5,6 +5,7 @@ import { healthcheck } from "./routes/healthcheck";
 export const createApp = (): Express => {
   const app = express();
 
+  console.log("hello world");
   app.get("/healthcheck", healthcheck);
 
   app.use("/api", apiRouter);
