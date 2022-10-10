@@ -2,15 +2,11 @@ name: Ekko CI
 
 on:
   push:
-    branches:
-      - main
     paths:
-      - "services/ekko/*"
+      - "services/ekko/**"
   pull_request:
-    branches:
-      - "*"
     paths:
-      - "services/ekko/*"
+      - "services/ekko/**"
 
 jobs:
   one-line:

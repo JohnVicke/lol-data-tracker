@@ -2,31 +2,26 @@ name: Teemo CI
 
 on:
   push:
-    branches: ["main"]
     paths:
-      - "apps/teemo/*"
+      - "apps/teemo/**"
   pull_request:
-    branches: ["*"]
-    types: [opened, synchronize]
     paths:
-      - "apps/teemo/*"
+      - "apps/teemo/**"
 
 jobs:
   build-lint:
     name: Build & Lint
+    runs-on: ubuntu-latest
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
 
       - name: Setup pnpm
-        uses: pnpm/actions-setup@v2.2.2
+        uses: pnpm/action-setup@v2.2.4
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -55,5 +50,8 @@ jobs:
           path: ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-${{ runner.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}-nextjs
 
+      - name: Ls
+        run: ls
+
       - name: Build and lint
-        run: pnpm turbo build lint
+        run: pnpm turbo build lint --filter teemo

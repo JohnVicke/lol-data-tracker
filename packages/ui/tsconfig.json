@@ -1,6 +1,7 @@
 {
   "extends": "tsconfig/react-library.json",
   "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "."
   },
   "include": ["src"],

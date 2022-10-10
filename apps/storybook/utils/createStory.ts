@@ -1,8 +1,6 @@
 import { ComponentMeta } from "@storybook/react";
 
-export const createStory = (
-  component: React.ComponentType
-): ComponentMeta<typeof component> =>
+export const createStory = (component: React.ComponentType<any>): ComponentMeta<typeof component> =>
 ({
   title: component.name,
   component,

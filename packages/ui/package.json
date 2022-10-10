@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.12",
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "formik": "^2.2.9",
+    "framer-motion": "^7.5.3"
   }
 }

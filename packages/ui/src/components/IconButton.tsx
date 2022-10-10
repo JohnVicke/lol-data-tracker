@@ -1,24 +1,14 @@
 import * as React from "react";
 import { clsx } from "clsx";
 
-type IconButtonColors =
-  | "primary"
-  | "secondary"
-  | "accent"
-  | "info"
-  | "success"
-  | "warning"
-  | "error";
+type IconButtonColors = "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "error";
 
 type IconButtonVariants = "square" | "circle";
 
 type IconButtonSizes = "lg" | "md" | "sm" | "xs";
 
 export type IconButtonProps = Omit<
-  React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >,
+  React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
   "color" | "children"
 > & {
   children?: React.ReactNode;
@@ -29,7 +19,6 @@ export type IconButtonProps = Omit<
   active?: boolean;
   disabled?: boolean;
   loading?: boolean;
-  wide?: boolean;
 };
 
 const sizes = {
@@ -43,7 +32,6 @@ export const IconButton = ({
   color,
   children,
   loading,
-  wide,
   disabled,
   active,
   className,
@@ -58,10 +46,9 @@ export const IconButton = ({
       { [`btn-${variant}`]: !!variant },
       { [`btn-${color}`]: !!color },
       { loading: !!loading },
-      { [`btn-${wide}`]: !!wide },
       { [`btn-${disabled}`]: !!disabled },
       { [`btn-${active}`]: !!active },
-      className
+      className,
     )}
     {...props}
   >
