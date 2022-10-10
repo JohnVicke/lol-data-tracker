@@ -7,7 +7,6 @@ on:
       - "apps/storybook/**"
   pull_request:
     branches: ["*"]
-    types: [opened, synchronize]
     paths:
       - "apps/storybook/**"
 
