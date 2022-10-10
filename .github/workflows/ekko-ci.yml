@@ -1,0 +1,17 @@
+name: Ekko CI
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "services/ekko/*"
+  pull_request:
+    branches: ["*"]
+    paths:
+      - "services/ekko/*"
+
+jobs:
+  test:
+    uses: ./.github/workflows/hello-world.yml
+    with:
+      foo: "lol"

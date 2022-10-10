@@ -1,0 +1,14 @@
+name: Hello world
+
+on:
+  workflow_call:
+    inputs:
+      foo:
+        required: true
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: LOL
+        run: echo "hello world ${{ inputs.foo }}"
