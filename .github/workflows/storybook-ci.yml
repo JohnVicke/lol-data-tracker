@@ -2,11 +2,15 @@ name: Storybook CI
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - "main"
     paths:
       - "apps/storybook/**"
   pull_request:
-    branches: ["*"]
+    branches:
+      - "*"
+    paths:
+      - "apps/storybook/**"
 
 jobs:
   build-lint:
