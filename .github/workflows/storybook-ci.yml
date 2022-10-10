@@ -51,3 +51,12 @@ jobs:
 
       - name: Build and lint
         run: pnpm turbo build lint
+
+  deploy-preview:
+    needs: [build-lint]
+    uses: johnvicke/lol-data-tracker/.github/workflows/vercel-deploy-preview.yml@main
+    with:
+    secrets:
+      PROJECT_ID: ${{ secrets.STORYBOOK_PROJECT_ID }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
