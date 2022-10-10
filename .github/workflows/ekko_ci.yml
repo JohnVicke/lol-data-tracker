@@ -1,0 +1,26 @@
+name: Ekko CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "services/ekko/*"
+  pull_request:
+    branches:
+      - "*"
+    paths:
+      - "services/ekko/*"
+
+jobs:
+  one-line:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+  test:
+    uses: johnvicke/lol-data-tracker/.github/workflows/hello_world.yml@main
+    with:
+      foo: "lol"
