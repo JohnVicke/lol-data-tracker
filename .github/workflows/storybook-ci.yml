@@ -2,13 +2,11 @@ name: Storybook CI
 
 on:
   push:
-    branches:
-      - "main"
-    paths:
-      - "apps/storybook/*"
+    branches: ["main"]
+    paths: ["apps/storybook/*"]
   pull_request:
-    branches:
-      - "*"
+    branches: ["*"]
+    paths: ["apps/storybook/*"]
 
 jobs:
   #
