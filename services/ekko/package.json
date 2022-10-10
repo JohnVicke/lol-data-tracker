@@ -19,6 +19,7 @@
     "@types/express": "^4.17.14",
     "@types/node": "^16",
     "concurrently": "^7.4.0",
+    "config": "workspace:*",
     "nodemon": "^2.0.20",
     "tsconfig": "workspace:*",
     "typescript": "^4.8.4"
