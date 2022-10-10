@@ -3,59 +3,55 @@ name: Storybook CI
 on:
   push:
     branches: ["main"]
-    paths:
-      - "apps/storybook/*"
+    paths: ["apps/storybook/*"]
   pull_request:
     branches: ["*"]
-    types: [opened, synchronize]
-    paths:
-      - "apps/storybook/*"
+    paths: ["apps/storybook/*"]
 
 jobs:
-  build-lint:
-    name: Build & Lint
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      - name: Setup pnpm
-        uses: pnpm/actions-setup@v2.2.2
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install deps (with cache)
-        run: pnpm install
-
-      - name: Build and lint
-        run: pnpm turbo build lint
+  #
+  #  build-lint:
+  #    name: Build & Lint
+  #    env:
+  #      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  #      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  #    runs-on: ubuntu-latest
+  #
+  #    steps:
+  #      - name: Checkout code
+  #        uses: actions/checkout@v3
+  #        with:
+  #          fetch-depth: 2
+  #
+  #      - name: Setup pnpm
+  #        uses: pnpm/actions-setup@v2.2.2
+  #
+  #      - name: Setup Node
+  #        uses: actions/setup-node@v3
+  #        with:
+  #          node-version: 16
+  #
+  #      - name: Get pnpm store directory
+  #        id: pnpm-cache
+  #        run: |
+  #          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+  #
+  #      - name: Setup pnpm cache
+  #        uses: actions/cache@v3
+  #        with:
+  #          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+  #          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+  #          restore-keys: |
+  #            ${{ runner.os }}-pnpm-store-
+  #
+  #      - name: Install deps (with cache)
+  #        run: pnpm install
+  #
+  #      - name: Build and lint
+  #        run: pnpm turbo build lint
 
   deploy-preview:
-    needs: [build-lint]
-    uses: johnvicke/lol-data-tracker/.github/workflows/vercel-deploy-preview.yml@main
-    with:
+    uses: ./.github/workflows/vercel-deploy-preview.yml
     secrets:
       PROJECT_ID: ${{ secrets.STORYBOOK_PROJECT_ID }}
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
