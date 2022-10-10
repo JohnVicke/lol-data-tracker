@@ -4,6 +4,7 @@ on:
   workflow_call:
     inputs:
       foo:
+        type: string
         required: true
 
 jobs:
