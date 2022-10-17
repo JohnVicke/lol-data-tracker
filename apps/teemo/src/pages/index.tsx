@@ -1,4 +1,4 @@
-import type { NextLayoutComponentType, NextPage } from "next";
+import type { NextLayoutComponentType } from "next";
 import Head from "next/head";
 import { ReactElement } from "react";
 import { Button } from "ui";
