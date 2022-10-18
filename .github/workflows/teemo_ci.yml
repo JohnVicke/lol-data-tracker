@@ -61,4 +61,4 @@ jobs:
   test-e2e:
     uses: johnvicke/lol-data-tracker/.github/workflows/playwright.yml@main
     with:
-      scope: "teemo"
+      project: "teemo"
