@@ -52,14 +52,11 @@ jobs:
           path: ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-${{ runner.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}-nextjs
 
-      - name: Ls
-        run: ls
-
       - name: 🚧 Build and lint
         run: pnpm turbo build lint --filter teemo
 
       - name: 🌐 Install Playwright Browsers
-        run: pnpx dlx playwright i --with-deps
+        run: pnpm exec playwright install --with-deps chromium
 
       - name: Test
         run: pnpm test:e2e --filter teemo
