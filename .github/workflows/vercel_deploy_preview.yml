@@ -5,10 +5,13 @@ on:
     secrets:
       PROJECT_ID:
         type: string
+        required: true
       VERCEL_ORG_ID:
         type: string
+        required: true
       VERCEL_TOKEN:
         type: string
+        required: true
 
 jobs:
   deploy-preview:
