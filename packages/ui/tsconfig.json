@@ -4,6 +4,6 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "."
   },
-  "include": ["src"],
+  "include": ["src", "scripts"],
   "exclude": ["dist", "build", "node_modules"]
 }
