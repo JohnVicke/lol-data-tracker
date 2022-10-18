@@ -1,9 +1,10 @@
-import type { NextPage } from "next";
+import type { NextLayoutComponentType } from "next";
 import Head from "next/head";
+import { ReactElement } from "react";
 import { Button } from "ui";
 import { trpc } from "../utils/trpc";
 
-const Home: NextPage = () => {
+const Home: NextLayoutComponentType = () => {
   const _hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
 
   return (
@@ -23,3 +24,5 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+Home.getLayout = (page: ReactElement) => <div>{page}</div>;
