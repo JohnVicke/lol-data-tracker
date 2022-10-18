@@ -57,3 +57,8 @@ jobs:
 
       - name: Build and lint
         run: pnpm turbo build lint --filter teemo
+
+  test-e2e:
+    uses: johnvicke/lol-data-tracker/.github/workflows/playwright.yml@main
+    with:
+      project: "teemo"

@@ -2,7 +2,7 @@ name: Playwright Tests
 on:
   workflow_call:
     inputs:
-      tests:
+      project:
         required: false
         type: string
 
@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: pnpm dlx playwright i --with-deps
       - name: Run Playwright tests
-        run: npx playwright test
+        run: pnpm test:e2e --filter ${{ inputs.scope }}
       - uses: actions/upload-artifact@v2
         if: always()
         with:
