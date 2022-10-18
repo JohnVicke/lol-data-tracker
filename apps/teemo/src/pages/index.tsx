@@ -1,6 +1,7 @@
 import type { NextLayoutComponentType } from "next";
 import Head from "next/head";
 import { ReactElement } from "react";
+import { DefaultLayout } from "src/layouts/DefaultLayout";
 import { Button } from "ui";
 import { trpc } from "../utils/trpc";
 
@@ -15,14 +16,14 @@ const Home: NextLayoutComponentType = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
+      <div>
         <Button>hello world</Button>
         <Button color="primary">Primary</Button>
-      </main>
+      </div>
     </>
   );
 };
 
 export default Home;
 
-Home.getLayout = (page: ReactElement) => <div>{page}</div>;
+Home.getLayout = (page: ReactElement) => <DefaultLayout>{page}</DefaultLayout>;
