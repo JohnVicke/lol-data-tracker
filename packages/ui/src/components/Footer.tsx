@@ -39,7 +39,7 @@ export const Footer = ({ rows, logo, copyRight, socialLinks }: FooterProps) => (
     </div>
     <div className="divider my-4" />
     {copyRight}
-    <div className="ml-auto mt-4">
+    <div className="mx-auto sm:mx-0 sm:ml-auto mt-4">
       <ul className="flex gap-4 ">
         {socialLinks?.map(({ icon, href, text }) => (
           <IconButton key={href}>{icon}</IconButton>
