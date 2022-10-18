@@ -11,7 +11,7 @@ on:
       - "apps/storybook/**"
 
 jobs:
-  build-lint:
+  storybook-build-lint:
     name: Build & Lint
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
