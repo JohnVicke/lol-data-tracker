@@ -5,12 +5,10 @@ on:
     branches:
       - "main"
     paths:
-      - "apps/storybook/*"
+      - "apps/storybook/**"
   pull_request:
-    branches:
-      - "*"
     paths:
-      - "apps/storybook/*"
+      - "apps/storybook/**"
 
 jobs:
   build-lint:
@@ -23,11 +21,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
 
       - name: Setup pnpm
-        uses: pnpm/actions-setup@v2.2.2
+        uses: pnpm/action-setup@v2.2.4
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -51,4 +47,4 @@ jobs:
         run: pnpm install
 
       - name: Build and lint
-        run: pnpm turbo build lint
+        run: pnpm turbo build lint --filter storybook

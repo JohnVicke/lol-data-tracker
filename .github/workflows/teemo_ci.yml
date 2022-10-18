@@ -2,6 +2,8 @@ name: Teemo CI
 
 on:
   push:
+    branches:
+      - "main"
     paths:
       - "apps/teemo/**"
   pull_request:
