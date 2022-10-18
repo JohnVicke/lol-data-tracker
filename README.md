@@ -18,8 +18,8 @@
 
 ## IMBALOL Project Structure
 
-| Codebase           |                Description                 |
-| :----------------- | :----------------------------------------: |
+| Codebase           |                Description                 |                URL                 |  
+| :----------------- | :----------------------------------------: | :----------------------------------------: |
 | [teemo](apps/teemo)     | Next (t3 stack) frontend                 |
 | [ekko](services/ekko)         |              Express backend               |
 | [storybook](apps/storybook)         |          Storybook UI docs            |
