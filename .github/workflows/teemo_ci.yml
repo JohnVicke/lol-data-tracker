@@ -55,11 +55,11 @@ jobs:
       - name: Ls
         run: ls
 
-      - name: Build and lint
+      - name: 🚧 Build and lint
         run: pnpm turbo build lint --filter teemo
 
-  test-e2e:
-    uses: johnvicke/lol-data-tracker/.github/workflows/playwright.yml@main
-    needs: build-lint
-    with:
-      project: "teemo"
+      - name: 🌐 Install Playwright Browsers
+        run: pnpx dlx playwright i --with-deps
+
+      - name: Test
+        run: pnpm test:e2e --filter teemo
