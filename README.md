@@ -11,9 +11,9 @@
 </p>
 
 <h3 align="center">
-  <a href="https://github.com/johnvicke/klask-backend/update-this">Contributing</a>
+  <a href="https://github.com/johnvicke/lol-data-tracker/update-this">Contributing</a>
   <span> · </span>
-  <a href="https://github.com/johnvicke/klask-backend/update-this">Documentation</a>
+  <a href="https://github.com/johnvicke/lol-data-tracker/update-this">Documentation</a>
 </h3>
 
 ## IMBALOL Project Structure
