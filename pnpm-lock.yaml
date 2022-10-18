@@ -65,6 +65,7 @@ importers:
 
   apps/teemo:
     specifiers:
+      '@heroicons/react': ^2.0.12
       '@playwright/test': ^1.27.1
       '@trpc/client': ^9.27.4
       '@trpc/next': ^9.27.4
@@ -91,6 +92,7 @@ importers:
       ui: workspace:*
       zod: ^3.18.0
     dependencies:
+      '@heroicons/react': 2.0.12_react@18.2.0
       '@trpc/client': 9.27.4_@trpc+server@9.27.4
       '@trpc/next': 9.27.4_l2t6vv6lmp6aralgreey6zoq4a
       '@trpc/react': 9.27.4_2g6rn7sj2da6xgohvi4oglgmnq
