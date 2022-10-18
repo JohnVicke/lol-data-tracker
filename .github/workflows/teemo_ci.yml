@@ -60,5 +60,6 @@ jobs:
 
   test-e2e:
     uses: johnvicke/lol-data-tracker/.github/workflows/playwright.yml@main
+    needs: build-lint
     with:
       project: "teemo"

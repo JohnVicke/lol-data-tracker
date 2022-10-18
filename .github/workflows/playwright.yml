@@ -11,6 +11,8 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
       - name: Install Playwright Browsers
         run: pnpm dlx playwright i --with-deps
       - name: Run Playwright tests
