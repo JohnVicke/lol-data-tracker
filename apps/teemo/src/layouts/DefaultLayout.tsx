@@ -1,4 +1,4 @@
-import { Footer, FooterProps } from "ui";
+import { Footer, FooterProps, Navbar } from "ui";
 import { BeakerIcon } from "@heroicons/react/24/solid";
 import Head from "next/head";
 
@@ -105,7 +105,8 @@ export const DefaultLayout = ({ children, head = defaultHead }: DefaultLayoutPro
       <meta name="description" content={head.description} />
       <link rel="icon" href={head.icon} />
     </Head>
-    <div className="flex flex-col h-screen">
+    <Navbar>hello world</Navbar>
+    <div className="flex flex-col h-screen mt-[64px]">
       <main className="container mx-auto max-w-screen-xl flex flex-1 flex-col gap-2">{children}</main>
       <div className="shrink mt-4">
         <Footer {...footerProps} />
