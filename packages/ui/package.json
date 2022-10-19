@@ -6,8 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint ./src/**/*.ts*",
-    "clean": "rm -rf node_modules",
-    "new-component": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" ./scripts/new-component.ts"
+    "clean": "rm -rf node_modules"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
