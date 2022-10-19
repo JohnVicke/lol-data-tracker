@@ -14,7 +14,9 @@
     "clean": "turbo run clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test:e2e": "turbo run test:e2e",
-    "test:unit": "turbo run test:unit"
+    "test:unit": "turbo run test:unit",
+    "start:cli": "pnpm -C ./packages/cli start",
+    "build:cli": "turbo run build --filter=cli "
   },
   "devDependencies": {
     "prettier": "latest",

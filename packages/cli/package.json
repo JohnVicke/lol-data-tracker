@@ -1,0 +1,32 @@
+{
+  "name": "cli",
+  "version": "0.0.0",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint ./src/**/*.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist .turbo node_modules"
+  },
+  "bin": {
+    "cli": "./dist/index.js"
+  },
+  "keywords": [],
+  "author": "Viktor Malmedal",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "4.1.2",
+    "commander": "^9.4.1",
+    "config": "workspace:*",
+    "inquirer": "^8.0.0",
+    "ts-node": "^10.9.1",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.2",
+    "@types/node": "^18.11.2",
+    "tsup": "^6.3.0"
+  }
+}
